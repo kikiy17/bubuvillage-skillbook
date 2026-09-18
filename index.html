@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="布布村技能圖鑑與技能比較工具">
+  <title>布布村技能圖鑑</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__content">
+      <p class="eyebrow">BUBU VILLAGE ARCHIVE</p>
+      <h1>布布村技能圖鑑</h1>
+      <p>搜尋、篩選並比較技能。資料直接來自遊戲技能設定。</p>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="toolbar" aria-label="技能篩選">
+      <label class="search-field">
+        <span>搜尋技能</span>
+        <input id="search" type="search" placeholder="技能名稱、效果或標籤">
+      </label>
+      <label>
+        <span>分類</span>
+        <select id="group"><option value="">全部分類</option></select>
+      </label>
+      <label>
+        <span>職業</span>
+        <select id="job"><option value="">全部職業</option></select>
+      </label>
+      <label>
+        <span>屬性</span>
+        <select id="school"><option value="">全部屬性</option></select>
+      </label>
+      <label>
+        <span>技能類型</span>
+        <select id="category"><option value="">全部類型</option></select>
+      </label>
+      <label>
+        <span>技能等級</span>
+        <select id="level"></select>
+      </label>
+      <button id="open-mods" class="button button--ghost" type="button">Core／Rune</button>
+      <button id="reset" class="button button--ghost" type="button">清除篩選</button>
+    </section>
+
+    <div class="result-heading">
+      <p id="result-count" aria-live="polite">讀取技能中…</p>
+      <p class="hint">點擊卡片查看完整資料，最多可比較三項技能。</p>
+    </div>
+
+    <section id="skill-grid" class="skill-grid" aria-live="polite"></section>
+  </main>
+
+  <aside id="compare-bar" class="compare-bar" hidden>
+    <div>
+      <strong>技能比較</strong>
+      <div id="compare-chips" class="compare-chips"></div>
+    </div>
+    <div class="compare-actions">
+      <button id="clear-compare" class="button button--ghost" type="button">清空</button>
+      <button id="open-compare" class="button" type="button">開始比較</button>
+    </div>
+  </aside>
+
+  <dialog id="detail-dialog" class="dialog">
+    <div id="detail-content"></div>
+    <button class="dialog__close" data-close-dialog="detail-dialog" aria-label="關閉">×</button>
+  </dialog>
+
+  <dialog id="compare-dialog" class="dialog dialog--wide">
+    <div id="compare-content"></div>
+    <button class="dialog__close" data-close-dialog="compare-dialog" aria-label="關閉">×</button>
+  </dialog>
+
+  <dialog id="mods-dialog" class="dialog dialog--wide">
+    <div id="mods-content"></div>
+    <button class="dialog__close" data-close-dialog="mods-dialog" aria-label="關閉">×</button>
+  </dialog>
+
+  <template id="empty-template">
+    <div class="empty-state">
+      <strong>沒有符合條件的技能</strong>
+      <p>請嘗試清除部分篩選條件。</p>
+    </div>
+  </template>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
