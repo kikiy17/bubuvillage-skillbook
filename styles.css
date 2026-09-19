@@ -232,7 +232,7 @@ input:focus, select:focus { border-color: var(--accent-2); }
     background-position: 85% 0%, 12% 10%, center, 58% top;
     background-size: auto, auto, auto, auto 105vh;
   }
-  .hero { background-position: center, 58% center; }
+  .hero { background-position: center, 1% center; }
   .hero__content, .layout { width: min(100% - 20px, 1180px); }
   .hero__content { padding: 34px 0 28px; }
   .toolbar { grid-template-columns: 1fr 1fr; padding: 13px; }
